@@ -1,0 +1,14 @@
+2022-01-06	
+
+출력 메소드 
+print()/ println()/ printf()/ format()
+
+입력 메소드
+BufferedReader br = new BufferedReader(new InputSteamReader(System.in());
+	
+br.readLine()
+
+
+System.in.read() : 이 메소드는 한 문자만 가져온다.
+단, 입력받은 하나의 문자를 문자 그대로 가져오는 것이 아니라
+ASCII Code 값으로 반환한다. 
