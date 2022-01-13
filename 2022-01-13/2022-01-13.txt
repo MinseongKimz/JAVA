@@ -1,0 +1,309 @@
+2022-01-13
+
+메소드와 변수의 스코프
+스코프 : 보이는 영역? {} ...? 
+
+메소드
+우리가 아는 메소드 main()... 자바프로그램의 시작 인터프리터가 가장먼저 찾음
+메소드 중괄호{} 내에 존재하는 문장들이 위에서 아래로 순차적 실행. 
+자바는 객체 지향 언어 이지만 메소드 내에서는 순차적 실행이라는 점 주목..
+
+『public』 『static』 『void』 ...??? 『String[] args』 이거 왜쓰는 걸까?
+
+main() 말고 다른 이름의 메소드 만들기
+
+
+public static void main(String[] args)
+{
+	System.out.println("프로그램의 시작");
+	hiEveryone(12);   → 메소드 호출
+	hiEveryone(13);	  → 메소드 호출
+	
+	System.out.println("프로그램 끝");
+}
+public static void hiEveryone(int age)   → hiEveryone : 메소드 이름
+{			  		 → int age    : 매개변수
+
+	System.out.println("좋은 아침입니다");
+	System.out.println("제 나이는" + age"세입니다.");	  	
+}		 
+적어도 이 메소드 사용하려면 이 매개변수 정도는 선언 해주세요~
+하이에브리원 메소드에서 보면 age 이게 뭔데 이럴수 있으니깐 
+hiEveryone(int age)  int age 를 매개변수로 사용한다.	
+
+
+메소드 → 함수 그림 떠올리기 → 기능, 동작, 행위
+
+메소드 정의 → public static void hiEveryone(int age) → 메소드()     ※ 이때 {}에 1줄이라도
+							 {		 메소드는 생략 불가	
+							 	.....;
+							 }	
+메소드 호출 → hiEveryone(12); → 메소드명();
+	       하이에브리원에 12라는 정수를 넘겨줌.
+
+위 코드 실행 순서 : main() 실행 → hiEveryone(12); 만나 hiEveryone메소드 출력 후 종료
+→ 다시 main에서 hiEveryone(12); 밑부터 실행 → hiEveryone(13); 만나 hiEveryone메소드 출력 후 종료
+→ 다시 main에서 hiEveryone(13); 밑부터 실행 후 종료
+
+
+
+public static void hiEveryone(int age, double height) 매개변수 2개 선언
+매개변수끼리 구분은 전달 순서부터 저장되며 『,』 로 구분한다.  	  	
+
+
+public static void main(String[] args)
+{
+	double myHeight = 164.6;
+	
+	hiEveryone(12 , myHeight);  → 메소드 호출
+	hiEveryone(13);	  → 메소드 호출
+	byEvreyone();	→ 아무것도 안넣어도 byEveryone 매개변수가 없고 
+			   그냥 내용에도 print 만 찍으면 되는 메소드라 문제없다.
+}
+public static void hiEveryone(int age, double height) 
+매개변수 선언할 때 데이터 타입을 모두 다 적어 줘야 한다.
+
+public static void byEveryone()
+{
+	System.out.println("다음에 뵐게요");
+}
+
+값을 반환하는 메소드 
+그전에 값을 반환한다 ...???? return
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+(반환자료형) int 메소드1()			main()
+{	....					{
+	....					 	int 메소드1(); → 10 
+	return 10;					double 메소드2(1,2); → 23.23
+}				메인에서
+				   →		}	
+(반환자료형) double 메소드2(int a, b)
+{
+	:
+	:
+	return 23.23;
+}
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+반환자료형은 메소드가 반환할 값의 데이터 타입을 메인에서 모르기 때문에
+메인에서 미리 데이터 타입에 맞게 메소드받기 위해 달아놓은 형태
+
+
+리턴이 없어서 아무것도 반환하지 않는 메소드는 반환자료형이 필요 없을듯?
+하지만  그냥 메소드명{} 이거는 다른 역할을 한다.
+그럼 뭘 써야 할까 ~           → void 
+메인도 생각해보면 메인이 뭘 반환하나? 그러니깐 void 쓴듯?
+
+
+스코프 
+변수가 선언될 위치를 생각하자!
+
+if()
+{
+	int num=1; // 이 num을  
+		   // 한문장같은 else 에서도 쓸까?	
+}		   // 불가능
+else
+{
+	int num =2; // 범위는 선언된 지역에서 논다.
+		    // {} 사이
+}
+
+
+메소드의 재귀호출
+재ː귀, 再歸 본디의 곳으로 다시 돌아오는 것.
+
+수학에서 재귀 예)
+5! = 5x4!       >  f(n) = n x f(n-1)      f(n) = ! 
+
+public static int factor(int n)
+{
+	if(n==1)
+		return 1;              
+	else
+		return n*factor(n-1);
+} 
+위 함수에서 1이면 n이 1이면 1을 반환하고 아니고 다른 정수라면 n-1 시켜서 다시 factor를 
+돌릴 것이다. 그럼 어떤 수라도 결국 1을 반환하게 될것인데 이 고리에 빠지면안된다.
+1이 반환되는 그 값은 factor(1) 이 1 이라는 것. 그럼 factor(2)는 2 x factor(1) = 2x1이 되고
+factor(2) = 2 가 된다. 그런식으로 다시 올라가는 구조로 생각해보자.
+자바도 재귀를 만나면 코드를 끝까지 복사해서 실행해서 거꾸로 올라간다. 
+
+public class InfRecul
+{
+	public static void main(String[] args)
+	{
+		showHi(10);	
+	}
+	public static void showHi(int cnt)
+	{   	
+		/*
+		System.out.println("Hi~");
+		showHi(cnt--);
+		if(cnt ==1)
+			return;
+		*/  // 이 구문은 StackOverflowError 가 나온다.
+
+		System.out.println("Hi~");
+		if (cnt == 1)
+		{
+			return ; 
+		}
+		showHi(--cnt);	// cnt-- 를 하게되면 호출 후 감소라 의미가 없다. //10에서 10 호출후 9로 바뀌는데 그럼 또 10호출문이 9를 줄이고....
+	}			// 그리고 if문보다 앞에 놔버리면 호출후 검사라 검사하기도 전에 호출이 이루어진다.
+				//평생 검사할 일이 없어진다. 그러므로 검사 먼저 수행한 후 호출이 필요하다.
+}    
+
+
+
+★클래스와 인스턴스★
+객체란..? 내가 보고 느끼고 생각할수 있는 모든것?? 
+
+객체 지향 프로그래밍? 
+내가 중요하게 생각하는 걸 중심으로 프로그래밍한것?
+
+나는 과일장수에게서 두개의 사과를 구매했다.
+
+객체 : 나, 과일장수,사과
+데이터 : 두개
+행위 : 구매했다.. 이렇게 나눌수 있을까?
+
+객체 = 속성(데이터) + 기능(동작,행위)
+
+객체를 만들 설계도가 필요하다.
+이 설계도가 클래스 
+
+나를 구성하는 속성은 키나 몸무게나 뭘 정의하냐에 따라 무한한 속성이 있다.
+
+그 중에 내가 관리하고자 하는 게 있다면 필요한 속성(데이터)를 골라서 사용하면 된다.
+그러한 일을 변수로 컨트롤 하는 것
+
+다이어트라는걸 한다면 몸무게가 필요할 것이고 운동능력등 필요한 속성(데이터)를 얻어온다.
+그래서 그걸 몸무게(데이터) 를 줄인다(행동) 라고 하고 이를 다이어트라고 말할거다.
+
+
+.
+
+설계도 
+클래스 = 변수 + 메소드(함수)
+클래스를 설계한다... 
+
+
+객체를 구성하는 것은 데이터와 기능이다.
+과일장수는 과일을 판매한다 --행위
+과일장수는 사과 20개 오렌지10개를 보유하고 있다. --상태
+과일장수의 과일 판매 수익은 50000원이다. ---상태
+
+과일장수 데이터 표현
+보유하고 있는 사과 수 : int numOfApple;
+판매 수익  	      : int myMoney;
+
+
+Class FruitSeller
+{
+	int  numOfApple = 20;	// 변수 선언
+	int myMoney = 0;
+
+
+	int saleApple(int money)   	// 메소드 정의
+	{
+		int num = money / 10000; 
+		numOfApple -= num;
+		myMoney += money;
+		return num;
+	}
+}
+
+이렇게 해서 객체가 만들어 진건 아니다. 
+이제 과일장수가 이 틀(설계도)을 보고 객체를 만드는 것이다.
+
+클래스는 붕어빵을 만드는게 아니라 붕어빵 틀을 만드는 것
+붕어빵 틀을 이용해서 붕어빵이라는 객체를 만들어 낸다.
+
+그럼 만드는 것은 뭐냐??? 
+BufferedReader 처럼
+main()
+{
+
+FruitSeller seller1 = new FruitSeller();  //하나만 만들수 있나? no!
+FruitSeller seller2 = new FruitSeller();  //과일장수의 능력(동작,정보)은 과일장수 클래스에~
+FruitSeller seller3 = new FruitSeller();
+FruitSeller seller4 = new FruitSeller();
+FruitSeller seller5 = new FruitSeller();
+FruitSeller seller6 = new FruitSeller();
+}
+
+클래스 정의와 키워드 『final』  
+
+아까 사과 money / 10000;  이런식으로 했는데 사과가격이 장수마다 가격이 다다른데
+그러니깐 int APPLE_PRICE
+ 	 money / APPLE_PRICE 로 가격을 변수화 했다. 이제 다양한 가격으로 사과를 팔 수 있다.
+그런데 그러다 실수로 APPLE_PRICE -= 1000; 으로 써버렸다... 
+이런 불상사를 막기 위해 『final』 을 int 앞에 붙혀서 변수를 상수화 한다.
+
+
+
+FruitSeller seller1  = new FruitSeller();
+------------------    ------------------
+참조 변수의 선언      인스턴스의 생성
+
+값 변수 int a =10; 같은건 메모리에서 a의 주소에 10이 들어가있지만
+참조변수는 메모리에서 따라가보면 클래스를 볼 수 있는 주소를 볼 수 있다.
+Primitive 자료형 이 아닌 선언은 참조 변수 선언이라 보면됨.
+
+FruitSeller seller2 = seller1; 
+이건 셀러1이 가지고 있는 클래스 주소 값을 가지게 된다.
+
+FruitSeller seller = new FruitSeller();
+
+seller.numOfApple = 20; >> FruitSeller 내에 numOfApple 의 값을 바꿈
+
+
+MyInst my = null; // MyInst 클래스의 참조변수 my 선언
+우리는 빈걸 보면 아무것도 없다라 생각하는데
+서양은  null이라는 없다 라는 상태가 존재한다라고 생각한다..
+null은 아무것도 참조하지 않음을 의미하는 키워드
+
+
+인스턴스 
+클래스라는 설계도로 만든 실체..
+클래스를 만지면 설계도가 달라져 만들고 싶은게 달라지게 되는데
+인스턴스를 만지면 이미 만들어진거 가지고 노는거니깐
+설계도에는 영향이 없다.
+
+ 
+
+생성자 (Constructor)
+객체, 인스턴스를 생성하는 문구
+ 아까 메소드에서 void 어쩌구(){} 했을때 void를 왜 쓰고 있냐 했을떄
+ 누가 안쓰는걸 쓰고 있다 했다. 
+ 그놈이 이놈. 
+
+ 생성자 는 항상 클래스명과 일치 해야한다. 			    -----------------버퍼드리더 클래스 호출	
+ 인스턴스 생성 과정에서 딱 한번 호출이된다. BufferedReader br = new BufferedReader();
+								------------------
+								메모리에 버퍼드리더 클래스 올려라				
+
+생성자 내에서는 final 을 초기화 할 수 있는 권한이 있다. 호출을 딱 한번 하니깐
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
