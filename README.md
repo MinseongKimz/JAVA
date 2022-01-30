@@ -6,7 +6,7 @@
 ___ 
 
 ## 1.JAVA ##
-2021-01-03~
-
+https://curious-wildcat-d24.notion.site/Java-805cf1d6296d46ddaa2e4d9c6c5b1a56
+노션에 정리중..
 --- 
-아직 작성중 어렵다..
+
