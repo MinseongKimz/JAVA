@@ -43,6 +43,5 @@ public class Test031
 		b= a>='A'&& a <='Z' ? (char)(a+32) : (a>='a'&& a<='z' ? (char)(a-32):a);
 		System.out.printf(" %c ¡æ %c " , a, b);
  
-
 	}
 }

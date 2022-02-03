@@ -25,9 +25,6 @@ public class Test021
 		//sc = new Scanner(김민성,20,22,22).useDelimiter("\\s*,\\s*");   \s* [,] \s* 
 		//									공백문자로 쓰겟다    모든 문자열 [,] 모든 문자열 
 		//		모든 문자열 사이에 [,] 를 공백문자로 사용하겠다! 
-
-
-
 		
 		name = sc.next();
 		kor = sc.nextInt();

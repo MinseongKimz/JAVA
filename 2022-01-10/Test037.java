@@ -44,10 +44,7 @@ public class Test037
 		{
 			System.out.printf("\n%d년은 평년입니다.\n",year);						
 														 //위에 해당하지 않는 년도는 평년이다.
-		}
-
-			
-		
+		}		
 
 	}
 }

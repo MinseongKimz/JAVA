@@ -12,8 +12,6 @@ public class Test026
 		int x =20, y =23;
 		//int temp; //임시저장소
 
-
-
 		System.out.printf(" x > %d, y > %d\n", x,y);
 		/*
 		temp = x;
@@ -37,7 +35,6 @@ public class Test026
 					x:0111		y:1010		x:1101
 					
 					output : x = 1101 y= 1010		*/		
-
 
 	}
 }

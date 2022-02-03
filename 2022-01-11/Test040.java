@@ -76,7 +76,6 @@ public class Test040
 			odd += e;
 		}
 
-
 		System.out.printf("\n>> 짝수의 합은 %d 이고, 홀수의 합은 %d입니다.\n",even,odd);
 	}
 }

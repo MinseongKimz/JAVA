@@ -15,7 +15,6 @@ public class Test024
 		System.out.printf("~b : %d%n",~b);
 		//~a : -11
 		//~b : 9
-	
 	}
 
 }

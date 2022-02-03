@@ -26,9 +26,7 @@ public class Test034
 
 		int a;
 		System.out.print("숫자 입력 : ");
-		a = Integer.parseInt(br.readLine());
-
-		
+		a = Integer.parseInt(br.readLine());		
 
 		if (a % 2 ==0)
 			System.out.printf("%d는 짝수\n",a);

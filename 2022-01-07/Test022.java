@@ -21,9 +21,6 @@ public class Test022
 			b += 100000;	// b 를 10만 만큼 증가시켜라
 		}
 
-
-
-
 		//결과 출력
 		System.out.println("float a : " + a/100000);
 		System.out.println("double b : " + b/100000);

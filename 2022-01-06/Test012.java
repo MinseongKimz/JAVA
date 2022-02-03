@@ -34,7 +34,6 @@ public class Test012
 
 		*///----------------------------------
 
-
 		//------함께 풀이한 내용--------------
 		int r = 10;			//반지름
 		//double pi = 3.141592; //원주율
@@ -61,15 +60,6 @@ public class Test012
 
 		System.out.printf("넓이 : %.2f\n", area);
 		System.out.printf("둘레 : %.2f\n", length);
-
-
-
-
-
-
-
-
-
 	} 
 }
 

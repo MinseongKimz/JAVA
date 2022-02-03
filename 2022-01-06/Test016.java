@@ -51,9 +51,6 @@ public class Test016
 		System.out.printf(" 이름 : %s \n", strName);// String 출력은 %s!
 		System.out.printf(" 총점 : %d \n", tot);	
 
-
-
-
 	}
 }
 
