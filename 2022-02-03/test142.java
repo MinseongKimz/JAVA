@@ -33,7 +33,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.util.StringTokenizer;
 
-public class test142
+public class Test142
 {
 	public static void main(String[] args) throws IOException
 	{
