@@ -220,12 +220,12 @@ public class Test165
 	{
 		switch (sel) // sel 을 입력 받았으니
 		{			 // 받은거에 맞게 메소드 호출해주자..
-		case 1: addElement(); break;	//요소 추가 
-		case 2: dispElement(); break;	//요소 출력
-		case 3: findElement(); break;	//요소 검색
-		case 4: delElement(); break;	//요소 삭제
-		case 5: chaElement(); break;	//요소 변경
-		case 6: exit(); break;			//종료
+		case Menus.E_ADD: addElement(); break;	//요소 추가 
+		case Menus.E_DISP: dispElement(); break;	//요소 출력
+		case Menus.E_FIND: findElement(); break;	//요소 검색
+		case Menus.E_DEL: delElement(); break;	//요소 삭제
+		case Menus.E_CHA: chaElement(); break;	//요소 변경
+		case Menus.E_EXIT: exit(); break;			//종료
 		default : System.out.println("에러"); // 그냥 디폴트 넣음
 		}
 	}
